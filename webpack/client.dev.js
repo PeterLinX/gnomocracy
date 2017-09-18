@@ -8,8 +8,7 @@ const statsOptions = require('./stats.config')
 module.exports = {
   name: 'client',
   target: 'web',
-  // devtool: 'source-map',
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     'fetch-everywhere',
@@ -41,6 +40,10 @@ module.exports = {
             },
           },
         }),
+      },
+      {
+        test: /\.sol$/,
+        use: ['web3-loader', 'solc-loader'],
       },
     ],
   },

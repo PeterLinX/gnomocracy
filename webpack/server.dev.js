@@ -25,8 +25,7 @@ const externals = fs
 module.exports = {
   name: 'server',
   target: 'node',
-  // devtool: 'source-map',
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: ['babel-polyfill', 'fetch-everywhere', res('../server/render.js')],
   externals,
   output: {
@@ -52,6 +51,10 @@ module.exports = {
             localIdentName: '[name]__[local]--[hash:base64:5]',
           },
         },
+      },
+      {
+        test: /\.sol$/,
+        loader: ['web3-loader', 'solc-loader'],
       },
     ],
   },

@@ -51,6 +51,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.sol$/,
+        loader: ['web3-loader', 'solc-loader'],
+      },
     ],
   },
   resolve: {
