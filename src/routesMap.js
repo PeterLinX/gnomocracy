@@ -9,7 +9,7 @@ export default {
       const {
         jwToken,
         location: { payload: { category } },
-        videosByCategory
+        videosByCategory,
       } = getState()
 
       if (videosByCategory[category]) return
@@ -20,7 +20,7 @@ export default {
       }
 
       dispatch({ type: 'VIDEOS_FETCHED', payload: { videos, category } })
-    }
+    },
   },
   VIDEO: {
     path: '/video/:slug',
@@ -32,7 +32,7 @@ export default {
       // using fetchData(`/api/video/${slug}`) and by dispatching
       // the the corresponding action type which I'll leave up to you to find
       // in ../reducers/index.js :)
-    }
+    },
   },
   PLAY: {
     path: '/video/:slug/play',
@@ -43,13 +43,13 @@ export default {
 
         dispatch(action)
       }
-    }
+    },
   },
   LOGIN: '/login',
   ADMIN: {
     path: '/admin', // TRY: visit this path or dispatch ADMIN
-    role: 'admin' // + change jwToken to 'real' in server/index.js
-  }
+    role: 'admin', // + change jwToken to 'real' in server/index.js
+  },
 }
 
 // DON'T GO DOWN THERE!

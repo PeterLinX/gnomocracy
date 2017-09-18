@@ -18,7 +18,7 @@ export default {
         alert(alertMessage)
       }, 1500)
     }
-  }
+  },
 }
 
 const alertMessage =

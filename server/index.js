@@ -7,6 +7,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware'
 import clientConfig from '../webpack/client.dev'
 import serverConfig from '../webpack/server.dev'
+import statsOptions from '../webpack/stats.config'
 import { findVideos, findVideo } from './api'
 
 const DEV = process.env.NODE_ENV === 'development'
@@ -50,12 +51,17 @@ if (DEV) {
   const multiCompiler = webpack([clientConfig, serverConfig])
   const clientCompiler = multiCompiler.compilers[0]
 
-  app.use(webpackDevMiddleware(multiCompiler, { publicPath }))
+  app.use(
+    webpackDevMiddleware(multiCompiler, {
+      publicPath,
+      stats: statsOptions,
+    })
+  )
   app.use(webpackHotMiddleware(clientCompiler))
   app.use(
     // keeps serverRender updated with arg: { clientStats, outputPath }
     webpackHotServerMiddleware(multiCompiler, {
-      serverRendererOptions: { outputPath }
+      serverRendererOptions: { outputPath },
     })
   )
 }

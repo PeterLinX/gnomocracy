@@ -11,7 +11,7 @@ import styles from '../css/Switcher'
 const UniversalComponent = universal(({ page }) => import(`./${page}`), {
   minDelay: 500,
   loading: Loading,
-  error: Err
+  error: Err,
 })
 
 const Switcher = ({ page, direction, isLoading }) =>
@@ -28,7 +28,7 @@ const Switcher = ({ page, direction, isLoading }) =>
 const mapState = ({ page, direction, ...state }) => ({
   page,
   direction,
-  isLoading: isLoading(state)
+  isLoading: isLoading(state),
 })
 
 export default connect(mapState)(Switcher)

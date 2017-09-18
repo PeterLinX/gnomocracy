@@ -93,16 +93,7 @@ module.exports = {
         peerDependencies: true
       }
     ],
-    'comma-dangle': [
-      2,
-      {
-        arrays: 'never',
-        objects: 'never',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never'
-      }
-    ],
+    'comma-dangle': [2, 'always-multiline'],
     'max-len': [
       'error',
       {
