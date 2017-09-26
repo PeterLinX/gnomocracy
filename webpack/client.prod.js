@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
-const StatsPlugin = require('stats-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 const AutoDllPlugin = require('autodll-webpack-plugin')
 const statsOptions = require('./stats.config')
 
@@ -49,7 +50,11 @@ module.exports = {
     extensions: ['.js', '.css'],
   },
   plugins: [
-    new StatsPlugin('stats.json'),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true,
+      openAnalyzer: false,
+    }),
     new ExtractCssChunks(),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['bootstrap'], // needed to put webpack bootstrap code before chunks
