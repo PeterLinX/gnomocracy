@@ -27,6 +27,7 @@
     "fetch-everywhere": "^1.0.5",
     "history": "^4.6.3",
     "react": "^15.4.2",
+    "react-datetime": "^2.10.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.5",
     "react-universal-component": "^2.5.0",

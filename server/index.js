@@ -21,7 +21,7 @@ app.use(cookieParser())
 
 app.use((req, res, next) => {
   const cookie = req.cookies.jwToken
-  const jwToken = 'fake' // TRY: set to 'real' to authenticate ADMIN route
+  const jwToken = 'real' // TRY: set to 'real' to authenticate ADMIN route
 
   if (cookie !== jwToken) {
     res.cookie('jwToken', jwToken, { maxAge: 900000 })
