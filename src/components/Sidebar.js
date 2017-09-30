@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Link, { NavLink } from 'redux-first-router-link'
+
 import { goToPage } from '../actions'
 import styles from '../css/Sidebar'
 
@@ -55,9 +56,13 @@ const Sidebar = ({ onClick, path }) =>
 
     <div style={{ height: 14 }} />
 
-    <NavLink to={{ type: 'ADMIN' }} activeClassName={styles.active}>
-      ADMIN
+    <NavLink
+      activeClassName={styles.active}
+      to={{ type: 'ADMIN', payload: { category: 'meeting-agenda' } }}
+    >
+      Create Meeting Agenda{' '}
     </NavLink>
+
   </div>
 
 const active = (currentPath, path) =>
