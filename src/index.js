@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import AppContainer from 'react-hot-loader/lib/AppContainer'
+
 import App from './components/App'
 import configureStore from './configureStore'
 import counter from './contracts/counter.sol'

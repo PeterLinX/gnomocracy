@@ -1,6 +1,5 @@
 import React from 'react'
 
-import DevTools from './DevTools'
 import Sidebar from './Sidebar'
 import Switcher from './Switcher'
 
@@ -12,6 +11,4 @@ export default () =>
       <Sidebar />
       <Switcher />
     </div>
-
-    <DevTools />
   </div>
