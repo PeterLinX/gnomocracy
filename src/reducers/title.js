@@ -9,7 +9,9 @@ export default (state = 'RFR Demo', action = {}) => {
     case 'LOGIN':
       return 'RFR Login'
     case 'ADMIN':
-      return 'RFR Admin'
+      return 'Create issue'
+    case 'ISSUE':
+      return 'Issue 1' // TODO the speicfic issue
     default:
       return state
   }

@@ -34,6 +34,13 @@ const Sidebar = ({ onClick, path }) =>
       Create Meeting Agenda{' '}
     </NavLink>
 
+    <NavLink
+      activeClassName={styles.active}
+      to={{ type: 'ISSUE', payload: { issueId: 1 } }}
+    >
+      Vote on meeting 1{' '}
+    </NavLink>
+
   </div>
 
 const active = (currentPath, path) =>
