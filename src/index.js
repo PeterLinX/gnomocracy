@@ -15,7 +15,11 @@ const render = App => {
   const root = document.getElementById('root')
 
   ReactDOM.render(
-    <AppContainer>
+    <AppContainer
+      errorReporter={({ error }) => {
+        throw error
+      }}
+    >
       <Provider store={store}>
         <App />
       </Provider>
