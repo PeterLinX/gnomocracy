@@ -8,6 +8,7 @@ const components = {
   VIDEO: 'Video',
   ADMIN: 'Admin',
   LOGIN: 'Login',
+  ISSUE: 'Issue',
   [NOT_FOUND]: 'NotFound',
 }
 
