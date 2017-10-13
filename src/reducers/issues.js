@@ -20,7 +20,7 @@ const INITIAL_STATE = fromJS({
   draft: {},
 })
 
-export default (state = fromJS([]), action) => {
+export default (state = INITIAL_STATE, action) => {
   if (updaters.has(action.type)) {
     return updaters.get(action.type)(state, action)
   }

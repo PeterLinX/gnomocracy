@@ -10,7 +10,7 @@ import DateTimePicker from './DateTimePicker'
 import MeetingTable from './MeetingTable'
 
 class _MeetingAgenda extends PureComponent {
-  onSubmit = () => {}
+  onSubmit = () => this.props.onSubmit()
 
   render() {
     return (
@@ -36,7 +36,7 @@ class _MeetingAgenda extends PureComponent {
 const MeetingAgenda = connect(
   () => ({}),
   dispatch => ({
-    onSubmit: () => dispatch(commitIssue()),
+    onSubmit: () => dispatch(commitIssue),
   })
 )(_MeetingAgenda)
 

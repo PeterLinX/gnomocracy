@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
 import { connectRoutes } from 'redux-first-router'
+import reduxThunk from 'redux-thunk'
 
 import routesMap from './routesMap'
 import options from './options'
@@ -15,7 +16,7 @@ export default (history, preLoadedState) => {
   )
 
   const rootReducer = combineReducers({ ...reducers, location: reducer })
-  const middlewares = applyMiddleware(middleware)
+  const middlewares = applyMiddleware(reduxThunk, middleware)
   const enhancers = composeEnhancers(enhancer, middlewares)
   const store = createStore(rootReducer, preLoadedState, enhancers)
 

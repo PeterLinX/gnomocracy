@@ -6,7 +6,6 @@ import AppContainer from 'react-hot-loader/lib/AppContainer'
 
 import App from './components/App'
 import configureStore from './configureStore'
-import counter from './contracts/counter.sol'
 
 const history = createHistory()
 const { store } = configureStore(history, window.REDUX_STATE)

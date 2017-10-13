@@ -1,5 +1,7 @@
 import { NOT_FOUND } from 'redux-first-router'
 
+import counter from '../contracts/counter.sol'
+
 // try dispatching these from the redux devTools
 
 export const goToPage = (type, category) => ({
@@ -29,6 +31,17 @@ export const visitVideo = slug => ({
   payload: { slug },
 })
 
-export const commitIssue = () => ({
-  type: 'COMMIT_ISSUE',
-})
+export const commitIssue = dispatch => {
+  counter.web3.eth.getAccounts().then(accounts => {
+    counter.Counter.methods
+      .increment()
+      .send({
+        from: accounts[0],
+      })
+      .on('confirmation', (confirmationNumer, receipt) => {
+        dispatch({
+          type: 'COMMIT_ISSUE',
+        })
+      })
+  })
+}
