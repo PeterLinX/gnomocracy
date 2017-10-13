@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { flushChunkNames } from 'react-universal-component/server'
 import flushChunks from 'webpack-flush-chunks'
 import configureStore from './configureStore'
+
 import App from '../src/components/App'
 
 export default ({ clientStats }) => async (req, res, next) => {
@@ -20,11 +21,10 @@ export default ({ clientStats }) => async (req, res, next) => {
   console.log('CHUNK NAMES', chunkNames)
 
   return res.send(
-    `<!doctype html>
-      <html>
+    `<html>
         <head>
           <meta charset="utf-8">
-          <title>redux-first-router-demo</title>
+          <title>gnome-blockchains-demo</title>
           ${styles}
           <link rel="stylesheet prefetch" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         </head>
