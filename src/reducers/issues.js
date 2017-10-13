@@ -1,5 +1,7 @@
 import { fromJS } from 'immutable'
 
+import IssueElection from '../contracts/IssueElection.sol'
+
 const updaters = new Map([
   ['@@redux/INIT', state => fromJS(state)],
   ['@@INIT', state => fromJS(state)],
