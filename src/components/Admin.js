@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { commitIssue } from '../actions'
 
 import { admin } from '../css/Switcher'
+import styles from '../css/MeetingAgenda'
 
 import DateTimePicker from './DateTimePicker'
 import MeetingTable from './MeetingTable'
@@ -13,10 +14,17 @@ class _MeetingAgenda extends PureComponent {
 
   render() {
     return (
-      <div>
-        <label htmlFor='MettingDate'> Meeting Date </label>
-        <DateTimePicker />
-        <div>
+      <div className={styles.meetingAgenda}>
+        <div className={styles.meetingDateDiv}>
+          <div>
+            <label htmlFor='MettingDate' className='meetingDateLabel'>
+              {' '}
+              Meeting Date
+              <DateTimePicker />
+            </label>
+          </div>
+        </div>
+        <div className={styles.meetingTableWrapper}>
           <MeetingTable />
           <button onClick={this.onSubmit}>Submit</button>
         </div>
@@ -27,10 +35,9 @@ class _MeetingAgenda extends PureComponent {
 
 const MeetingAgenda = connect(
   () => ({}),
-  dispatch =>
-    ({
-      onSubmit: () => dispatch(commitIssue()),
-    }(_MeetingAgenda))
-)
+  dispatch => ({
+    onSubmit: () => dispatch(commitIssue()),
+  })
+)(_MeetingAgenda)
 
 export default MeetingAgenda

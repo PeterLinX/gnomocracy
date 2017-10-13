@@ -1,19 +1,29 @@
 import React from 'react'
+import styles from '../css/MeetingTable'
 
-const MeetingTable = () =>
-  <div>
-    <div>
-      <label htmlFor='MettingPoint'>Meeting point</label>
-      <input />
+const MeetingTable = () => (
+  <div className={styles.meetingTable}>
+    <div className={styles.meetingRows}>
+      <label htmlFor='MettingPoint' className={styles.meetingLabels}>
+        Meeting point
+      </label>
+      <input className='form-control' />
     </div>
-    <div>
-      <label htmlFor='ShortDesc'> Short Desc </label>
-      <textarea />
+    <div className={styles.meetingRows}>
+      <label htmlFor='ShortDesc' className={styles.meetingLabels}>
+        {' '}
+        Short Desc{' '}
+      </label>
+      <textarea className='form-control' />
     </div>
-    <div>
-      <label htmlFor='NumVotes'> Num of votes reqd </label>
+    <div className={styles.meetingRows}>
+      <label htmlFor='NumVotes' className={styles.meetingLabels}>
+        {' '}
+        Num of votes reqd{' '}
+      </label>
       <input />
     </div>
   </div>
+)
 
 export default MeetingTable

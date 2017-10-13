@@ -5,24 +5,10 @@ import Link, { NavLink } from 'redux-first-router-link'
 import { goToPage } from '../actions'
 import styles from '../css/Sidebar'
 
-const Sidebar = ({ onClick, path }) =>
+const Sidebar = ({ onClick, path }) => (
   <div className={styles.sidebar}>
-
-    <NavLink activeClassName={styles.active} exact to='/'>HOME</NavLink>
-
-    <NavLink activeClassName={styles.active} to='/list/db-graphql'>
-      DB & GRAPHQL
-    </NavLink>
-
-    <NavLink activeClassName={styles.active} to={['list', 'react-redux']}>
-      REACT & REDUX
-    </NavLink>
-
-    <NavLink
-      activeClassName={styles.active}
-      to={{ type: 'LIST', payload: { category: 'fp' } }}
-    >
-      FP
+    <NavLink activeClassName={styles.active} exact to='/'>
+      HOME
     </NavLink>
 
     <div style={{ height: 14 }} />
@@ -40,8 +26,8 @@ const Sidebar = ({ onClick, path }) =>
     >
       Vote on meeting 1{' '}
     </NavLink>
-
   </div>
+)
 
 const active = (currentPath, path) =>
   currentPath === path ? styles.active : ''
