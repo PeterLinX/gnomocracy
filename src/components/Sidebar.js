@@ -10,21 +10,6 @@ const Sidebar = ({ onClick, path }) =>
 
     <NavLink activeClassName={styles.active} exact to='/'>HOME</NavLink>
 
-    <NavLink activeClassName={styles.active} to='/list/db-graphql'>
-      DB & GRAPHQL
-    </NavLink>
-
-    <NavLink activeClassName={styles.active} to={['list', 'react-redux']}>
-      REACT & REDUX
-    </NavLink>
-
-    <NavLink
-      activeClassName={styles.active}
-      to={{ type: 'LIST', payload: { category: 'fp' } }}
-    >
-      FP
-    </NavLink>
-
     <div style={{ height: 14 }} />
 
     <NavLink

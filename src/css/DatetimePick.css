@@ -1,0 +1,27 @@
+.datetimePicker {
+  display: inline-block;
+  width: 250px;
+  margin-bottom: 0;
+  margin-left: 4%;
+  &.input-append, &.input-prepend {
+    font-size: inherit; /* override bootstrap2 insanity */
+  }
+
+  .rdt {
+    display: inline-block;
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    .rdtPicker {
+      .rdtSwitch, .rdtTimeToggle {
+        background-color: #f8f8f8;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
