@@ -6,6 +6,7 @@
   "author": "Daniel Playfair Cal <daniel.playfair.cal@gmail.com>, Anish Patil <anish.developer@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "testrpc": "testrpc --network-id 10",
     "start": "npm run clean && cross-env NODE_ENV=development babel-watch server/index.js",
     "start:prod": "npm run build && npm run serve",
     "serve": "cross-env NODE_ENV=production node buildServer/index.js",
@@ -72,8 +73,8 @@
     "rimraf": "^2.6.1",
     "solc-loader": "^1.1.1",
     "travis-github-status": "^1.4.0",
-    "web3": "^0.20.2",
-    "web3-loader": "^1.1.2",
+    "web3": "^1.0.0-beta.22",
+    "web3-loader": "git://github.com/hedgepigdaniel/web3-loader.git#22ff06f0fea191cebe54e568d237d7552e8dcc33",
     "webpack": "^3.5.4",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
