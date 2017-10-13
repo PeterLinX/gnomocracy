@@ -28,3 +28,7 @@ export const visitVideo = slug => ({
   type: 'VIDEO',
   payload: { slug },
 })
+
+export const commitIssue = () => ({
+  type: 'COMMIT_ISSUE',
+})
