@@ -9,3 +9,7 @@ export const selectCurrentIssue = createSelector(
   selectLocation,
   (issues, location) => issues.get(location.payload.issueId)
 )
+
+export const selectDraftIssue = createSelector(selectIssues, issues =>
+  issues.get('draft')
+)

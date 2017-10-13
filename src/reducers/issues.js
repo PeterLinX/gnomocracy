@@ -17,7 +17,12 @@ const updaters = new Map([
 
 const INITIAL_STATE = fromJS({
   committed: [],
-  draft: {},
+  draft: {
+    numVotes: 0,
+    description: '',
+    label: '',
+    date: '',
+  },
 })
 
 export default (state = INITIAL_STATE, action) => {

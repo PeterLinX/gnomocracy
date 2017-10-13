@@ -45,3 +45,9 @@ export const commitIssue = dispatch => {
       })
   })
 }
+
+export const changeField = (key, value) => ({
+  type: 'UPDATE_ISSUE',
+  key,
+  value,
+})
