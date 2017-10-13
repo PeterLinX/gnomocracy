@@ -50,6 +50,9 @@ export default {
     path: '/admin', // TRY: visit this path or dispatch ADMIN
     role: 'admin', // + change jwToken to 'real' in server/index.js
   },
+  ISSUE: {
+    path: '/issues/:issueId',
+  },
 }
 
 // DON'T GO DOWN THERE!

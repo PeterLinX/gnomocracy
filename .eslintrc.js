@@ -53,6 +53,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/no-render-return-value': 0,
     'no-confusing-arrow': 0,
+    'no-else-return': 0,
     'no-underscore-dangle': 0,
     'no-plusplus': 0,
     camelcase: 1,
